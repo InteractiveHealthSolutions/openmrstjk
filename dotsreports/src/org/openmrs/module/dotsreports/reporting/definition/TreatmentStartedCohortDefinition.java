@@ -18,6 +18,7 @@ public class TreatmentStartedCohortDefinition extends BaseCohortDefinition {
 		@ConfigurationProperty(group="startDateGroup")
 		private Date toDate;
 		
+		@ConfigurationProperty(group="drugSetType")
 		private DrugSetType drugSet;
 		
 		//private String drugSet;

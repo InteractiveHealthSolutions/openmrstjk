@@ -20,6 +20,7 @@ public class CauseOfDeathCohortDefinition extends BaseCohortDefinition{
 		@ConfigurationProperty(group="startDateGroup")
 		private Date toDate;
 		
+		@ConfigurationProperty(group="deathCauseType")
 		String causeType;
 		
 		//private String drugSet;

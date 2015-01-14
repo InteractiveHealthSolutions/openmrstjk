@@ -5,7 +5,7 @@
 	<!-- Base Module Properties -->
 	<id>dotsreports</id>
 	<name>DOTS Reports</name>
-	<version>1.4</version>
+	<version>1.9</version>
 	<package>org.openmrs.module.@MODULE_ID@</package>
 	<author>Interactive Research and Development</author>
 	<description>DOTS Reports Module</description>

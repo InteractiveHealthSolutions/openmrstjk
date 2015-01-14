@@ -71,13 +71,13 @@ public class MdrtbQueryService {
     	Integer outcomeDied     = Context.getService(TbService.class).getConcept(TbConcepts.DIED).getConceptId();
     	
     	StringBuilder query = new StringBuilder();
-    	query.append("select p.patient_id");
-    	query.append("		from patient as p");
-    	query.append("inner join obs as o1");
-    	query.append("		on p.patient_id =  o1.person_id");
-    	query.append("left join obs o2");
-    	query.append("	 	on p.patient_id =  o2.person_id ");
-    	query.append("where");
+    	query.append("select patient.patient_id ");
+    	query.append("		from patient ");
+    	query.append(" inner join obs as o1");
+    	query.append("		on patient.patient_id =  o1.person_id");
+    	query.append(" left join obs o2");
+    	query.append("	 	on patient.patient_id =  o2.person_id ");
+    	query.append(" where");
     	query.append("		o1.concept_id = " + txOutcome); 				//275
     	query.append("		and o1.value_coded = " +outcomeDied); 			//25
     	query.append("		and o2.concept_id = " + causeOfDeath); 			//290
