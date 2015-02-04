@@ -43,8 +43,6 @@ import org.openmrs.module.dotsreports.reporting.definition.DotsProgramLocationCo
 import org.openmrs.module.dotsreports.reporting.definition.DotsProgramLocationCohortTJKDefinition;
 import org.openmrs.module.dotsreports.reporting.definition.DotsTJKConvertedInMonthForEnrollmentDuringCohortDefinition;
 import org.openmrs.module.dotsreports.reporting.definition.DotsTJKPatientDistrictCohortDefinition;
-import org.openmrs.module.dotsreports.reporting.definition.FLDTreatmentStartedCohortDefinition;
-import org.openmrs.module.dotsreports.reporting.definition.SLDTreatmentStartedCohortDefinition;
 import org.openmrs.module.dotsreports.reporting.definition.TreatmentStartedCohortDefinition;
 import org.openmrs.module.dotsreports.reporting.definition.TxOutcomeExistsCohortDefinition;
 import org.openmrs.module.dotsreports.reporting.definition.TypeOfDiagnosisCohortDefinition;
