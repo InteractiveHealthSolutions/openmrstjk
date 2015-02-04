@@ -2,6 +2,7 @@ package org.openmrs.module.dotsreports.reporting.definition;
 
 import java.util.Date;
 
+import org.hibernate.loader.entity.CascadeEntityLoader;
 import org.openmrs.module.dotsreports.MdrtbConstants.CauseOfDeathType;
 import org.openmrs.module.reporting.cohort.definition.BaseCohortDefinition;
 import org.openmrs.module.reporting.cohort.definition.CohortDefinition;
@@ -21,7 +22,7 @@ public class CauseOfDeathCohortDefinition extends BaseCohortDefinition{
 		private Date toDate;
 		
 		@ConfigurationProperty(group="deathCauseType")
-		String causeType;
+		CauseOfDeathType causeType;
 		
 		//private String drugSet;
 		
@@ -73,11 +74,11 @@ public class CauseOfDeathCohortDefinition extends BaseCohortDefinition{
 			this.toDate = toDate;
 		}
 
-		public String getCauseType() {
+		public CauseOfDeathType getCauseType() {
 			return causeType;
 		}
 
-		public void setCauseType (String causeType) {
+		public void setCauseType (CauseOfDeathType causeType) {
 			this.causeType = causeType;
 		}
 	

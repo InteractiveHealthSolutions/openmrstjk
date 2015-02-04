@@ -26,16 +26,16 @@ public class CauseOfDeathCohortDefinitionEvaluator implements CohortDefinitionEv
 		Cohort c=null;
 		
 		
-		if(cd.getCauseType().equalsIgnoreCase(CauseOfDeathType.CAUSE_TB.toString()))
+		if(cd.getCauseType() == CauseOfDeathType.CAUSE_TB)
 		{
 			c = MdrtbQueryService. getPatientsDiedByTB(context, null, null);
 		}
-		else if(cd.getCauseType().equalsIgnoreCase(CauseOfDeathType.CAUSE_TBHIV.toString()))
+		else if(cd.getCauseType()==CauseOfDeathType.CAUSE_TBHIV)
 		{
 			Concept tbHivDeath = Context.getService(TbService.class).getConcept(TbConcepts.DEATH_BY_TBHIV[0]);
 			c = MdrtbQueryService.getPatientsByCauseOfDeath(context, null, null, tbHivDeath);
 		}
-		else if(cd.getCauseType().equalsIgnoreCase(CauseOfDeathType.CAUSE_NONTB.toString()))
+		else if(cd.getCauseType() ==CauseOfDeathType.CAUSE_NONTB)
 		{
 			Concept nonTbDeath = Context.getService(TbService.class).getConcept(TbConcepts.DEATH_BY_OTHER_DISEASES[0]);
 			c = MdrtbQueryService.getPatientsByCauseOfDeath(context, null, null, nonTbDeath);

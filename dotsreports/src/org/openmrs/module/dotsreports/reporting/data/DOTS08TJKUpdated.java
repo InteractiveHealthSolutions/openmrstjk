@@ -15,6 +15,7 @@ import org.apache.commons.lang.StringUtils;
 import org.openmrs.Cohort;
 import org.openmrs.Location;
 import org.openmrs.api.context.Context;
+import org.openmrs.module.dotsreports.MdrtbConstants.CauseOfDeathType;
 import org.openmrs.module.dotsreports.MdrtbConstants.DrugSetType;
 import org.openmrs.module.dotsreports.TbConcepts;
 import org.openmrs.module.dotsreports.exception.MdrtbAPIException;
@@ -160,10 +161,10 @@ public ReportData evaluateReport(EvaluationContext context) {
 			//CohortDefinition diedDuringTreatment =  Cohorts.getDiedDuringFilter(startDate, endDate);
 			
 			//DIED:TB
-			CohortDefinition tbDied = ReportUtil.getCompositionCohort("AND", died, Cohorts.getDiedByTB(startDate, endDate));
+			CohortDefinition tbDied = ReportUtil.getCompositionCohort("AND", died, Cohorts.getByCauseOfDeath(startDate, endDate,CauseOfDeathType.CAUSE_TB));
 			
 			//DIED: NON-TB
-			CohortDefinition nonTbDeath =ReportUtil.getCompositionCohort("AND", died, Cohorts.getDiedByNonTB(startDate, endDate));
+			CohortDefinition nonTbDeath =ReportUtil.getCompositionCohort("AND", died, Cohorts.getByCauseOfDeath(startDate, endDate,CauseOfDeathType.CAUSE_NONTB));
 			
 			//FAILURE
 			//CohortDefinition failure = Cohorts.getFailedDuringFilter(startDate, endDate);

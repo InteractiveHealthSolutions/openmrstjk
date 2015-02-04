@@ -16,6 +16,7 @@ import org.openmrs.Cohort;
 import org.openmrs.Location;
 import org.openmrs.api.context.Context;
 import org.openmrs.module.dotsreports.TbConcepts;
+import org.openmrs.module.dotsreports.MdrtbConstants.DrugSetType;
 import org.openmrs.module.dotsreports.MdrtbConstants.TreatmentState;
 import org.openmrs.module.dotsreports.exception.MdrtbAPIException;
 import org.openmrs.module.dotsreports.reporting.ReportSpecification;
@@ -153,8 +154,8 @@ public ReportData evaluateReport(EvaluationContext context) {
 			CohortDefinition haveNoMdrOutcome = ReportUtil.minus(mdrEnrolled,haveTxOutcome);
 			
 			
-			CohortDefinition fldTreatmentStarted = Cohorts.getFLDTreatmentStartedFilter(startDate, endDate);
-			CohortDefinition sldTreatmentStarted = Cohorts.getSLDTreatmentStartedFilter(startDate, endDate);
+			CohortDefinition fldTreatmentStarted = Cohorts.getTreatmentStartedByDrugSetFilter(startDate, endDate, DrugSetType.FLD);
+			CohortDefinition sldTreatmentStarted = Cohorts.getTreatmentStartedByDrugSetFilter(startDate, endDate, DrugSetType.SLD);
 			//CohortDefinition treatmentNotStarted = ReportUtil.minus(allTB, ReportUtil.getCompositionCohort("OR", fldTreatmentStarted, sldTreatmentStarted));
 			//WAITING FOR SLD
 			//TODO: NO INFORMATION YET
@@ -200,7 +201,7 @@ public ReportData evaluateReport(EvaluationContext context) {
 			table2.addRow("rrmdrHiv", ReportUtil.getCompositionCohort("AND",rrOrMdr,hivPositive), null);
 			table2.addRow("xdr",xdrDiagnosed,null);
 			
-			table2.addColumn("Total",Cohorts.getSLDTreatmentStartedFilter(startDate,endDate),null);
+			table2.addColumn("Total",Cohorts.getTreatmentStartedByDrugSetFilter(startDate, endDate, DrugSetType.SLD),null);
 			table2.addColumn("Cured",cured,null);
 			table2.addColumn("TreatmentCompleted",txCompleted,null);
 			table2.addColumn("Failure",failed,null);

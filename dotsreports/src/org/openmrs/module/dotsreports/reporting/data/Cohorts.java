@@ -581,24 +581,24 @@ public class Cohorts {
 		return null;
 	}
 	
-	public static CohortDefinition getFLDTreatmentStartedFilter(Date fromDate, Date toDate) {
-		
-			FLDTreatmentStartedCohortDefinition cd = new FLDTreatmentStartedCohortDefinition();
-			
-			cd.setFromDate(fromDate);
-			cd.setToDate(toDate);
-			
-			return cd;
-	}
-	
-	public static CohortDefinition getSLDTreatmentStartedFilter(Date fromDate, Date toDate) {
-		
-		SLDTreatmentStartedCohortDefinition cd = new SLDTreatmentStartedCohortDefinition();
-		
-		cd.setFromDate(fromDate);
-		cd.setToDate(toDate);
-		return cd;
-	}
+//	public static CohortDefinition getFLDTreatmentStartedFilter(Date fromDate, Date toDate) {
+//		
+//			FLDTreatmentStartedCohortDefinition cd = new FLDTreatmentStartedCohortDefinition();
+//			
+//			cd.setFromDate(fromDate);
+//			cd.setToDate(toDate);
+//			
+//			return cd;
+//	}
+//	
+//	public static CohortDefinition getSLDTreatmentStartedFilter(Date fromDate, Date toDate) {
+//		
+//		SLDTreatmentStartedCohortDefinition cd = new SLDTreatmentStartedCohortDefinition();
+//		
+//		cd.setFromDate(fromDate);
+//		cd.setToDate(toDate);
+//		return cd;
+//	}
 	
 	public static CohortDefinition getTreatmentStartedByDrugSetFilter(Date fromDate, Date toDate, DrugSetType drugSet) {
 		TreatmentStartedCohortDefinition cd = new TreatmentStartedCohortDefinition();
@@ -610,38 +610,49 @@ public class Cohorts {
 		return cd;
 	}
 	
-	public static CohortDefinition getDiedByTB(Date fromDate, Date toDate)
+	public static CohortDefinition getByCauseOfDeath(Date fromDate, Date toDate, CauseOfDeathType cause)
 	{
 		CauseOfDeathCohortDefinition cd = new CauseOfDeathCohortDefinition();
 		
 		cd.setFromDate(fromDate);
 		cd.setToDate(toDate);
-		cd.setCauseType(CauseOfDeathType.CAUSE_TB.toString()); //includes both tb and tbhiv
+		cd.setCauseType(cause);
 		
-		return cd;	
+		return cd;
 	}
 	
-	public static CohortDefinition getDiedByNonTB(Date fromDate, Date toDate)
-	{
-		CauseOfDeathCohortDefinition cd = new CauseOfDeathCohortDefinition();
-		
-		cd.setFromDate(fromDate);
-		cd.setToDate(toDate);
-		cd.setCauseType(CauseOfDeathType.CAUSE_NONTB.toString());
-		
-		return cd;	
-	}
-	
-	public static CohortDefinition getDiedByTBHIV(Date fromDate, Date toDate)
-	{
-		CauseOfDeathCohortDefinition cd = new CauseOfDeathCohortDefinition();
-		
-		cd.setFromDate(fromDate);
-		cd.setToDate(toDate);
-		cd.setCauseType(CauseOfDeathType.CAUSE_TBHIV.toString());
-		
-		return cd;	
-	}
+//	public static CohortDefinition getDiedByTB(Date fromDate, Date toDate)
+//	{
+//		CauseOfDeathCohortDefinition cd = new CauseOfDeathCohortDefinition();
+//		
+//		cd.setFromDate(fromDate);
+//		cd.setToDate(toDate);
+//		cd.setCauseType(CauseOfDeathType.CAUSE_TB.toString()); //includes both tb and tbhiv
+//		
+//		return cd;	
+//	}
+//	
+//	public static CohortDefinition getDiedByNonTB(Date fromDate, Date toDate)
+//	{
+//		CauseOfDeathCohortDefinition cd = new CauseOfDeathCohortDefinition();
+//		
+//		cd.setFromDate(fromDate);
+//		cd.setToDate(toDate);
+//		cd.setCauseType(CauseOfDeathType.CAUSE_NONTB.toString());
+//		
+//		return cd;	
+//	}
+//	
+//	public static CohortDefinition getDiedByTBHIV(Date fromDate, Date toDate)
+//	{
+//		CauseOfDeathCohortDefinition cd = new CauseOfDeathCohortDefinition();
+//		
+//		cd.setFromDate(fromDate);
+//		cd.setToDate(toDate);
+//		cd.setCauseType(CauseOfDeathType.CAUSE_TBHIV.toString());
+//		
+//		return cd;	
+//	}
 	public static CohortDefinition getPatientsWithDistict(Location l) {
 		StringBuilder q = new StringBuilder();
 		q.append("select 	person_id ");
