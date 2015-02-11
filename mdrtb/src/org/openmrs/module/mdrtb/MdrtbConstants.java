@@ -15,6 +15,8 @@ public class MdrtbConstants {
     
     public static enum CauseOfDeathType {CAUSE_TB,CAUSE_TBHIV,CAUSE_NONTB};
 
+    public static enum DrugSetType {FLD,SLD};
+
 }
 
 
